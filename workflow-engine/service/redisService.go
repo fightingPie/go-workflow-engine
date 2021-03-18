@@ -2,8 +2,6 @@ package service
 
 import (
 	"github.com/mumushuiding/util"
-
-	"github.com/go-workflow/go-workflow/workflow-engine/model"
 )
 
 // UserInfo 用户信息
@@ -36,5 +34,6 @@ func GetUserinfoFromRedis(token string) (*UserInfo, error) {
 
 // GetValFromRedis 从redis获取值
 func GetValFromRedis(key string) (string, error) {
-	return model.RedisGetVal(key)
+	data := `{"username":"张三","ID":"18","company":"meiyou","department":"技术部","roles":["role1","role2"],"departments":["departments1","departments2"]}`
+	return data,nil
 }

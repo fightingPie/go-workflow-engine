@@ -3,23 +3,21 @@
 
   目前只支持mysql数据库，测试之前先安装好数据库
 
-# 1.2 docker 安装最新版 go-workflow 微服务
+# 1.2  通过 go get 获取
 
-docker run  -e DbType=mysql -e DbLogMode=false -e DbName=test -e DbHost=localhost -e DbUser=root -e DbPassword=123 -p 8080:8080 registry.cn-hangzhou.aliyuncs.com/mumushuiding/go-workflow:latest
+ 1.go clone git@github.com:fightingPie/go-workflow-engine.git
 
-# 1.3 通过 go get 获取
+ 2.go get -u
 
- 1.go get https://github.com/go-workflow/go-workflow
+ 3.go mod vendor
 
- 2.进入根目录，打开config.json文件,修改数据库连接配置
+ 4.go mod tidy
 
- 3. $ go build
+ 5.进入根目录，打开config.json文件,修改数据库连接配置
 
- 4. $ go-workflow.exe
+ 6.go build
 
-# 1.4 部署到 K8s
-
-请查阅根目录的 k8s.yaml 文件 ， 配置使用了Istio, 未使用Istio的请稍作修改
+ 7.go-workflow.exe
 
 # 2.流程存储
 
